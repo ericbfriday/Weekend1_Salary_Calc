@@ -2,34 +2,56 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="jquery-3.2.1.min.js"></script>
-        <script src="scripts.js"></script>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <header>
-        <h1>Employee Cost Calculator</h1>
-    </header>
-    <body>
-        <section id="employeeInformationEntry">
-            <h2>Enter Employee Information below.</h2>
-            <p><input type="text" placeholder="First Name" id="firstName"/></p>
-            <p><input type="text" placeholder="Last Name" id="lastName"/></p>
-            <p><input type="text" placeholder="ID Number" id="idNumber"/></p>
-            <p><input type="text" placeholder="Job Title" id="jobTitle"/></p>
-            <p><input type="text" placeholder="Annual Salary" id="annualSalary"/></p>
-            <p><button type="submit">Submit Information</button></p>
-        </section>
-        <section id="displayEmployeeInformation">
-    
-        </section>
-    </body>
-    <footer>
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
 
-    </footer>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="jquery-3.2.1.min.js"></script>
+    <script src="scripts.js"></script>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<header>
+    <h1>Employee Cost Calculator</h1>
+</header>
+
+<body>
+    <section id="employeeInformationEntry">
+        <h2>Enter Employee Information below.</h2>
+            <p>First Name:<input type="text" placeholder="First Name" id="firstName" /></p>
+            <p>Last Name:<input type="text" placeholder="Last Name" id="lastName" /></p>
+            <p>ID Number:<input type="text" placeholder="ID Number" id="idNumber" /></p>
+            <p>Job Title:<input type="text" placeholder="Job Title" id="jobTitle" /></p>
+            <p>Annual Salary:<input type="text" placeholder="Annual Salary" id="annualSalary" /></p>
+            <p><button id="submitEmployee">Submit Information</button></p>
+    </section>
+
+    <section id="displayEmployeeInformation">
+        <h2>Employees</h2>
+        <table id="displayTable" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>ID Number</th>
+                    <th>Job Title</th>
+                    <th>Annual Salary</th>
+                    <th>Delete</th> <!-- Holder for delete buttons -->
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <button id="deleteButton">Delete</button>
+    </section>
+</body>
+<footer>
+
+</footer>
+
 </html>
