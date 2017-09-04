@@ -8,6 +8,7 @@ function docReady() {
     $('#submitEmployee').on('click', addEmployee);
     $('#submitEmployee').on('click', monthlyCostDisplay);
     $('#submitEmployee').on('click', displayEmployees);
+    $('#deleteAllButton').on('click', deleteAll);
 } // end docReady function
 
 function addEmployee() {
@@ -65,3 +66,19 @@ function deleter() {
     console.log('deleting employee');
     $(this).closest ('tr').remove();
 }// end deleter function
+
+function deleteAll() {
+    console.log('Deleting All employees');
+    $('#displayEmployee').children().remove();
+}
+
+// pro mode idea
+// 1) use table ID (ee number) to lookup employee by searching through employees array
+// 2) select correct ee in array and lookup monthly salary
+// 3( remove monthly salary from total, and 
+// 4) re-run monthly cost display function
+
+// or
+
+// 1) lookup yearly salary from deleted row, divide by 12
+// 2) return this number to jQuery somehow, and return/subtract from total monthly cost
