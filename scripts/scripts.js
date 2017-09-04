@@ -1,5 +1,4 @@
 var employees = [];
-// var totalSalaries = 0;
 var totalMonthlyCosts = 0;
 
 $(document).ready(docReady);
@@ -8,6 +7,7 @@ function docReady() {
     console.log('JQ Ready');
     $('#submitEmployee').on('click', addEmployee);
     $('#submitEmployee').on('click', monthlyCostDisplay);
+    $('#submitEmployee').on('click', displayEmployees);
 } // end docReady function
 
 function addEmployee() {
@@ -45,4 +45,23 @@ function monthlyCosts (employees, monthlySalary) {
 
 function monthlyCostDisplay () {
     $('#monthlyCostDisplay').html(totalMonthlyCosts);
-}
+} // end monthlyCostDisplay function
+
+function displayEmployees() {
+//    console.log('Adding Employee');
+    $('#displayEmployee').append('<tr id=' + employees.slice(-1)[0].idNumber + '>' +
+        '<td>' + employees.slice(-1)[0].firstName + '</td>' +
+        '<td>' + employees.slice(-1)[0].lastName + '</td>' +
+        '<td>' + employees.slice(-1)[0].idNumber + '</td>' +
+        '<td>' + employees.slice(-1)[0].jobTitle + '</td>' +
+        '<td>' + employees.slice(-1)[0].annualSalary + '</td>' +
+        '<td>' + '<button class="delete">Delete</button>' + '</td>' +
+        '</tr>'
+    );
+    $('.delete').on('click', deleter);
+} // end displayEmployees function
+
+function deleter() {
+    console.log('deleting employee');
+    $(this).closest ('tr').remove();
+}// end deleter function
