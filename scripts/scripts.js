@@ -7,7 +7,7 @@ $(document).ready(docReady);
 function docReady() {
     console.log('JQ Ready');
     $('#submitEmployee').on('click', addEmployee);
-//    $('#submitEmployee').on('click', monthlyCosts);
+    $('#submitEmployee').on('click', monthlyCostDisplay);
 } // end docReady function
 
 function addEmployee() {
@@ -42,3 +42,7 @@ function monthlyCosts (employees, monthlySalary) {
         return a + b[Employee.monthlySalary];
     }, 0);
 } // end monthlyCosts function
+
+function monthlyCostDisplay () {
+    $('#monthlyCostDisplay').html(totalMonthlyCosts);
+}
