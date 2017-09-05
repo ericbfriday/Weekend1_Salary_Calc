@@ -50,7 +50,8 @@ function monthlyCostDisplay () {
 
 function displayEmployees() {
 //    console.log('Adding Employee');
-    $('#displayEmployee').append('<tr id=' + employees.slice(-1)[0].idNumber + '>' +
+//    $('#displayEmployee').append('<tr id=' + employees.slice(-1)[0].idNumber + '>' +
+$('#displayEmployee').append('<tr data-monthlysalary=' + parseInt(employees.slice(-1)[0].monthlySalary) + '>' +
         '<td>' + employees.slice(-1)[0].firstName + '</td>' +
         '<td>' + employees.slice(-1)[0].lastName + '</td>' +
         '<td>' + employees.slice(-1)[0].idNumber + '</td>' +
@@ -70,7 +71,9 @@ function deleter() {
 function deleteAll() {
     console.log('Deleting All employees');
     $('#displayEmployee').children().remove();
+    $('#monthlyCostDisplay').html('0');
 }
+
 
 // pro mode idea
 // 1) use table ID (ee number) to lookup employee by searching through employees array
